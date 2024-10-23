@@ -1,0 +1,268 @@
+---
+author: "Cody Szuwalski"
+date: "November 13, 2022"
+output:
+  pdf_document:
+    fig_caption: yes
+    fig_height: 4
+    fig_width: 6
+header-includes:   
+-  \pagenumbering{gobble}
+number_sections: yes
+csl: fish-and-fisheries.csl
+toc: yes
+title: "2022 Gulf of Alaska forage report"
+---
+
+\newpage
+
+```{r,echo=F,message=FALSE,warning=F, include=F}
+library(knitr)
+library(ggplot2)
+library(PBSmodelling)
+library(pander)
+library(coda)
+library(maps)
+library(lattice)
+library(PBSmapping)
+library(mapdata)    #some additional hires data
+library(maptools)   #useful tools such as reading shapefiles
+library(mapproj)
+library(plotrix)
+library(RColorBrewer)
+library(miceadds)
+library(ggplot2)
+library(dplyr)
+library(reshape2)
+
+#==make it so the big figures are plotted once and then not again (e.g. survey results)
+
+```
+
+\newpage
+
+
+
+\newpage
+
+# Gulf of Alaska
+# D. Trends in biomass, abundance, prevalence, and distribution
+## Information content of data sources
+The primary data source for this report is the bottom trawl survey, but this survey is not aimed at sampling the water column (where many forage species reside) and is not designed to capture small fish. Furthermore, the sampling does not include very shallow or very deep waters in the GOA. Consequently, measures of abundance, prevalence, and distribution are uncertain. The goal of this report is to present the data from the bottom trawl survey for forage species while understanding the potential shortcomings of the survey for this task.
+
+## Methods
+Data for many of the species listed above as 'forage species' are available in the bottom trawl survey data (\autoref{all_spp}). However, for many of these species, a large fraction of the available observations are associated with life stages that are not 'forage' sized. Filtering out tows in which the average weight of an individual was greater than 0.5 kilograms focuses on the fraction of tows in which only forage sized animals were present (\autoref{all_spp_for}). This is an overly restrictive filter because tows with average weights higher than 0.5 kilograms could have forage sized fish in them. However, it is also clear that not filtering the data would lead to distributions and abundances that include primarily adult fish. The actual distribution of forage sized individuals of given species is likely somewhere between filtered and unfiltered data set. After the application of this filter, eulachon, capelin, squid, and shrimp are the primary species that appear to be at least marginally well sampled by the bottom trawl, so they will be the primary focus of this report. 
+
+## Pacific capelin
+Pacific capelin are an important forage species in the GOA for which information from both the bottom trawl and acoustic surveys exist. Acoustic survey data are not presented here. Previous forage reports have noted the similarity in the trends of abundance between the acoustic and trawl survey. Estimates of both biomass and abundance of capelin during 2023 in the GOA were near the historical averages (\autoref{bio_big_est}). Capelin were observed in ~21% of the 2021 bottom trawl samples, which was the third highest frequency of occurrence (the previous high occurring in 2013 at 25%; \autoref{freq_occ_big}). Historically, capelin are observed widely throughout the GOA (\autoref{capelin_time_map}), but the largest survey estimates have been observed in the Kodiak area in shallow water (\autoref{capelin_recent}). 
+
+## Eulachon
+Eulachon are larger than capelin and distributed closer to the seafloor, which allows them to be more efficiently sampled by the bottom trawl survey. Eulachon lack swim bladders, so they are not detected in acoustic surveys. Abundance and biomass estimates of eulachon during 2023 were similar to 2021, but lower than those observed from 2001-2015 (\autoref{bio_big_est}). Eulachon were observed in ~27% of the 2023 bottom trawl samples, which was a decline from high values seen in 2021 (\autoref{freq_occ_big}). Like capelin, eulachon are observed widely throughout the GOA (\autoref{eulachon_time_map}), but the largest survey estimates have been observed in the Kodiak area in water 100-300 meters deep (\autoref{eulachon_recent}). 
+
+## Squid
+Observations of two groups of squid are reported from the bottom trawl survey: magistrate armhook squid (*Berryteuthis magister*) and unidentified squid. Adult *B. magister* are regularly encountered by the bottom trawl survey because of their relatively large size (maximum mantle length of ~28 cm; Sealifebase.com). Smaller species and juvenile squid are mainly found near surface waters. Estimated abundance and biomass for magistrate armhook squid during 2021 were  higher than 2021 estimates, and abundance estimates for unidentified squids were near all-time highs (\autoref{bio_big_squid}). The historical trends of the prevalence of occurrence for both *B. magister* and unidentified squid are increasing, and the 2023 prevalence for each species was at or near all-time highs (\autoref{freq_occ_squid}). *B. magister* is distributed throughout the GOA (\autoref{squid_time_map}), but the largest biomasses have been observed in Kodiak, Chirikof, and Shumagin at depths of 200-300 meters (\autoref{squid_recent}).
+
+## Shrimp
+Observations of two groups of shrimp are reported from the bottom trawl survey: sidestripe shrimp (*Pandalopsis dispar*) and unidentified shrimp. *P. dispar* can reach 8 inches in length and were seen in ~23% of survey samples in 2023; unidentified shrimp were observed in ~30% of samples (\autoref{freq_occ_shrimp}). The 2023 estimated abundance of unidentified shrimp declined from all-time highs in 2021 but the estimated biomass was closer to average (\autoref{bio_big_shrimp}). The trend in sidestripe shrimp abundance and biomass has been positive since the GOA survey began in the 1980s, but 2023 estimates declined further from the all-time highs seen in 2019 (\autoref{bio_big_shrimp}). Sidestripe shrimp are observed in shallower waters the farther east into the GOA the survey progresses (\autoref{shrimp_recent}).
+
+# E. Bycatch and other conservation issues
+## FMP forage group
+Incidental catch data for the FMP forage group are available starting in 2003. Prior to 2005, species identification by observers was unreliable and many smelt catches were recorded as 'other osmerid'. Identification has improved since then, but smelts are often too damaged for accurate identification and much of the catch is still reported as other osmerid. Osmerids regularly make up the vast majority of FMP forage fish group catches (\autoref{fmp_incid_cat}). Eulachon are the most abundant osmerid catch and it is likely that they make up the majority of the 'other osmerid' catch. Osmerid catches (and consequently total FMP forage group catches, excluding squid) have been low relative to historical levels since 2015 (\autoref{fmp_total}). Other osmerids accounted for almost all of the incidental catch in 2021. 
+
+## Squid
+Squid catches are generally relatively low compared to biomass estimates from trawl surveys, but in 2006 there was a large catch of 1,516 t. Recent squid catches are low compared to catches observed beginning in 2005 (\autoref{squid_catch}). The 2006 catch occurred in the bottom trawl fisheries for pollock, but the catches from midwater trawls for pollock have been consistently higher than the bottom trawls since 2008 (\autoref{squid_catch}). Almost all of the squid catch occurs in the central GOA (\autoref{squid_catch}).
+
+## Shrimp
+Bycatch of pandalid shrimp in federal fisheries is generally low and all is discarded (\autoref{shrimp_catch}). Catches in 2019 and 2020 were the highest in the time series, but 2021 and 2022 catches were the lowest. Recently, the arrowtooth flounder fishery accounts for nearly all of the bycaught shrimp in the GOA and those catches primarily occur in the Central GOA (\autoref{shrimp_catch}).
+
+## Pacific herring
+Pacific herring are a prohibited species and data on catches in federal fisheries are available beginning in 1991. The Prohibited Species Catch (PSC) of herring is generally low, with occasional larger catches (e.g. 1994, 2004, and 2016; \autoref{herring_catch}). Herring PSC in 2022 was above the long-term mean. Most of the herring bycatch occurs in the midwater trawls for walleye pollock in the Central GOA (\autoref{herring_catch}).
+
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{all_spp}All non-zero tows for select forage species."}
+
+include_graphics("plots/goa_all_spp.png")
+
+```
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{all_spp_for}All non-zero tows for select forage species filtered for tows that have an average weight less than 0.5 kilograms."}
+
+include_graphics("plots/goa_all_spp_forage.png")
+
+```
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{bio_big_est}Estimated biomass and abundance of eulachon and Pacific capelin in the Gulf of Alaska with 95\\% confidence intervals."}
+
+include_graphics("plots/goa_est_biomass_n_big2.png")
+
+```
+
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{freq_occ_big}Frequency of occurence of eulachon and Pacific capelin in the Gulf of Alaska bottom trawl survey."}
+
+include_graphics("plots/goa_prevalence_big2.png")
+
+```
+
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{capelin_time_map}Map of distribution of prevalence and density from the all GOA surveys for Pacific capelin. Grey squares indicate surveyed stations at which no capelin were observed.  Vertical black lines delineate INFPC areas. (zoom for detail)"}
+
+include_graphics("plots/goa_time_map_Pacific capelin.png")
+
+```
+
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{capelin_recent}Estimated biomass of Pacific capelin by INFPC area and depth over time in the Gulf of Alaska (top) and map of distribution of prevalence and density from the most recent GOA survey (bottom). Grey squares indicate surveyed stations at which no capelin were observed."}
+
+include_graphics("plots/goa_Pacific capelin.png")
+
+```
+
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{eulachon_time_map}Map of distribution of prevalence and density from the all GOA surveys for eulachon. Grey squares indicate surveyed stations at which no eulachon were observed.  Vertical black lines delineate INFPC areas. (zoom for detail)"}
+
+include_graphics("plots/goa_time_map_eulachon.png")
+
+```
+
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{eulachon_recent}Estimated biomass of eulachon by INFPC area and depth over time in the Gulf of Alaska (top) and map of distribution of prevalence and density from the most recent GOA survey (bottom). Grey squares indicate surveyed stations at which no eulachon were observed."}
+
+include_graphics("plots/goa_eulachon.png")
+
+```
+
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{bio_big_squid}Estimated biomass and abundance of magistrate armhook squid and unidentified squid in the Gulf of Alaska with 95\\% confidence intervals."}
+
+include_graphics("plots/goa_est_biomass_n_squid.png")
+
+```
+
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{freq_occ_squid}Frequency of occurence of magistrate armhook squid and unidentified squid in the Gulf of Alaska bottom trawl survey."}
+
+include_graphics("plots/goa_prevalence_squid.png")
+
+```
+
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{squid_time_map}Map of distribution of prevalence and density from the all GOA surveys for magistrate armhook squid. Grey squares indicate surveyed stations at which no squid were observed. Vertical black lines delineate INFPC areas. (zoom for detail)"}
+
+include_graphics("plots/goa_time_map_magistrate armhook squid.png")
+
+```
+
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{squid_recent}Estimated biomass of magistrate armhook squid by INFPC area and depth over time in the Gulf of Alaska (top) and map of distribution of prevalence and density from the most recent GOA survey (bottom). Grey squares indicate surveyed stations at which no squid were observed."}
+
+include_graphics("plots/goa_magistrate armhook squid.png")
+
+```
+
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{freq_occ_shrimp}Frequency of occurence of sidestrip shrimp and unidentified shrimp in the Gulf of Alaska bottom trawl survey."}
+
+include_graphics("plots/goa_prevalence_shrimp.png")
+
+```
+
+
+\newpage
+
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{bio_big_shrimp}Estimated biomass and abundance of sidestrip shrimp and unidentified shrimp in the Gulf of Alaska with 95\\% confidence intervals."}
+
+include_graphics("plots/goa_est_biomass_n_shrimp.png")
+
+```
+
+
+\newpage
+
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{shrimp_recent}Estimated biomass of sidestrip shrimp by INFPC area and depth over time in the Gulf of Alaska (top) and map of distribution of prevalence and density from the most recent GOA survey (bottom). Grey squares indicate surveyed stations at which no shrimp were observed."}
+
+include_graphics("plots/goa_sidestripe shrimp.png")
+
+```
+
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{fmp_incid_cat_ret}Retained incidental catches of fishes in the GOA FMP forage group (2003-2021)."}
+
+include_graphics("plots/goa_fmp_incidental_catch_retain.png")
+
+```
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{fmp_incid_cat_disc}Discarded incidental catches of fishes in the GOA FMP forage group (2003-2021)."}
+
+include_graphics("plots/goa_fmp_incidental_catch_discard.png")
+
+```
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{fmp_total}Total incidental catches of fishes in the GOA FMP forage group (2003-2024)."}
+
+include_graphics("plots/goa_fmp_incidental_catch_stack.png")
+
+```
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{squid_catch}Catches of squid in the GOA that were discarded vs. retained (top). Biomass of squid caught by target fishery (middle). Location of squid caught in the GOA (bottom). "}
+
+include_graphics("plots/goa_squid_catch.png")
+
+```
+
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{shrimp_catch}Catches of shrimp in the GOA that were discarded vs. retained (top). Biomass of shrimp caught by target fishery (middle). Location of shrimp caught in the GOA (bottom). "}
+
+#include_graphics("plots/goa_shrimp_catch.png")
+
+```
+
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{herring_catch}Catches of herring in the GOA (top). Prohibited species catch of herring caught by target fishery (middle). Location of herring caught in the GOA (bottom). "}
+
+include_graphics("plots/goa_herring_catch.png")
+
+```
+
+
+\newpage

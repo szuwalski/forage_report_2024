@@ -1,0 +1,158 @@
+---
+author: 
+  'J Vollenweider, C Szuwalski, E Yasumiishi, A Andrews, A Dimond, J Murphy, E Farley, and E Siddon'
+date: "November 13, 2024"
+output:
+  pdf_document:
+    fig_caption: yes
+    fig_height: 4
+    fig_width: 6
+number_sections: yes
+csl: fish-and-fisheries.csl
+toc: yes
+title: "2024 Alaskan forage report"
+header-includes:
+- \usepackage{float}
+- \floatplacement{figure}{H}
+---
+  
+\newpage
+
+\listoftables
+
+\newpage
+
+\listoffigures
+
+\newpage
+ 
+ This forage species report is for both the Bering Sea and Aleutian Islands (BSAI) and the Gulf of Alaska (GOA) region. Starting in 2024, this joint report is prepared and presented to the Plan Teams and the North Pacific Fishery Management Council (NPFMC) in even years. This report is not a formal stock assessment; it is a presentation of the available data on trends in abundance and distribution of forage populations (primarily bottom trawl survey data) and a description of their interactions with federal fisheries through bycatch.
+
+Forage species are a fundamental component of the GOA and BSAI ecosystems, so there is overlap between the information presented here and in the Ecosystem Considerations report (https://access.afsc.noaa.gov/reem/ecoweb/index.php). This forage report primarily displays data from the GOA bottom trawl surveys. The Ecosystem Considerations report contains surface-trawl surveys, euphausiid abundances from acoustic surveys, and indirect indicators of forage species abundance such as seabird breeding success and groundfish predator diets. 
+ 
+# A. Forage species and their management
+Defining 'forage species' can be difficult. Small, energy-rich schooling fishes like sardines or herring are the classic 'forage fish', but most fish species experience predation in their life cycle. Forage species can be thought of as those whose primary ecosystem role is as prey and serve as a link between lower and upper trophic levels. The following species or groups are defined as components of the forage base in Alaskan waters: members of the 'forage fish group' listed in the GOA and BSAI Fishery Management Plan, squids, shrimps, Pacific herring (*Clupea pallasii*), and juvenile groundfishes and salmon.  Arctic cod (*Boreogadus saida*) is also included in the BSAI FMP. 
+ 
+## Forage fish groups
+Forage fishes in Alaska were either managed as part of the Other Species group (non-target species caught incidentally in commercial fisheries) or were classified as “non-specified” in the Fishery Management Plan (FMP), with no conservation measures prior to 1998. Amendment 36 to the BSAI FMP created a separate forage fish category in 1998, with conservation measures that included a ban on directed fishing. Members of this forage fish group (the “FMP forage group” in this report) are considered “Ecosystem Components” beginning in 2011. The group is large and diverse, containing over fifty species from these taxonomic groups (see the appendix at the end of this report for a full list of species), but some of the key groups include:
+ 
+  * Osmeridae (smelts; eulachon [*Thaleichthys pacificus*] and Pacific capelin [*Mallotus catevarius*] are the principal species)
+  * Ammodytidae (sand lances; Pacific sand lance [*Ammodytes personatus*] is the only species commonly observed in the BSAI)
+  * Trichodontidae (sandfishes; Pacific sandfish [*Trichodon trichodon*] is the main species)
+  * Stichaeidae (pricklebacks)
+  * Pholidae (gunnels)
+  * Myctophidae (lanternfishes)
+  * Bathylagidae (blacksmelts)
+  * Gonostomatidae (bristlemouths)
+  * Euphausiacea (krill; these are crustaceans, not fish, but are considered essential forage)
+
+The primary motivation for the creation of the FMP forage group was to prevent fishing-related impacts to the forage base in Alaska. This was an early example of ecosystem-based fisheries management (Livingston et al. 2011). Two key management measures for the group are specified in section 50 CFR 679b20.doc of the federal code: a closure to direct fishing and a prohibition of the sale, barter, trade or processing of forage species. Fishmeal production and sale from forage species is allowed provided it does not exceed the maximum retainable bycatch. Catches are limited to a maximum retention allowance (MRA) of 2% by weight of the retained target species.
+
+It appears the figure of '2%' was chosen to accommodate existing levels of catch that were believed to be sustainable (Federal Register, 1998, vol. 63(51), pages 13009-13012), which suggests the intent of amendment 36 was to prevent an increase in forage fish removals, not to reduce existing levels of catch. In 1999, the state of Alaska adopted a statute with the same taxonomic groups and limitations, except that no regulations were passed regarding the processing of forage fishes. This exception has caused some confusion regarding the onshore processing of forage fishes for human consumption (J. Bonney, pers. comm., Alaska Groundfish Databank, Kodiak, Alaska).
+
+## Pacific herring
+Herring are abundant in Alaska marine waters. Commercial fisheries in Alaska, mainly for herring roe, exist along the western coast of Alaska from Port Moller north to Norton Sound (Figure 1). These fisheries target herring returning to nearshore waters for spawning, and herring in different areas are managed as separate stocks. The largest stock in the BSAI spawns in Togiak Bay in northern Bristol Bay; the next largest stock is in Norton Sound (data can be retrieved at www.adfg.alaska.gov). Herring are hypothesized to migrate seasonally between their spawning grounds and two overwintering areas in the outer domain of the eastern Bering Sea (EBS) continental shelf (\autoref{herring_ground}; Tojo et al. 2007). Herring stocks in the GOA's Prince William Sound declined following the Exxon Valdez Oil Spill and have yet to recover to levels that would allow a directed fishery. However, herring populations in other regions of the GOA do have directed fisheries with notably large recruitment events in recent years, such as Southeast Alaska and Kodiak. 
+
+Herring fisheries are managed by the Alaska Department of Fish & Game (ADFG) which uses a combination of surveys and population modeling to set catch limits. In federal fisheries, herring are managed as Prohibited Species, which means directed fishing is banned and any bycatch must be returned to the sea immediately. The amount of herring bycatch allowed is also capped and if the cap is exceeded the responsible target fishery is closed in special Herring Savings Areas (\autoref{herring_mig}) to limit further impacts. In the BSAI, the Prohibited Species Catch Quota for herring is calculated as 1% of the estimated annual biomass of herring in the eastern Bering Sea.     
+
+## Juvenile groundfishes and salmon
+Members of this group, particularly age-0 and age-1 walleye pollock, *Gadus chalcogrammus*, are key forage species in Alaska. Young Chinook, chum, and sockeye salmon are also important. As they are early life stages of important commercially fished species, however, their status is dependent on the assessment and management of the recruited portion of the population. Detailed information regarding these species is available in NPFMC stock assessments (http://www.afsc.noaa.gov/refm/stocks/assessments.htm) and ADFG reports (www.adfg.alaska.gov). These fishes are also included in the BASIS survey to some extent, described below.
+
+## Shrimp
+A variety of shrimps occur in Alaska. Members of the family Pandalidae are generally found in offshore waters while shrimps of the family Crangonidae are distributed mainly in nearshore waters. Commercial fisheries for shrimps are managed by ADFG and are currently closed in the BSAI and GOA. Further information on shrimps in Alaska waters is available from ADFG (www.adfg.alaska.gov). This report includes data regarding catches of pandalid shrimps in federal groundfish fisheries.
+
+## Squids
+Several species of squid inhabit Alaska, mainly along shelf breaks. Squids were managed as part of the 'Other Species' complex before 2011; starting in 2011, they were managed as a target stock complex with annual harvest specifications. However, in June 2017, the NPFMC amended the FMP for the BSAI (Amendment 117) and GOA (Amendment 106) to move the squid stock complex into the Ecosystem Component category. The rationales for this decision included: the lack of a directed fishery for squid, low risk of overfishing given high productivity and no directed fishery, and small incidental fishing mortality.
+
+The amendments were implemented in the Federal Register with an effective date of August 8, 2018 (Federal Register, Volume 83, Number 130, July 6 2018, pages 31460-31470). The amendments placed squid in the Ecosystem Component category, prohibited a directed fishery for squid, established a 20% maximum retention allowance, and established record keeping requirements. The new management regime was implemented in January 2019. 
+
+## Arctic cod
+
+Arctic cod is not currently included in the FMP for the BSAI. It is primarily a cold-water species with a northern distribution in the EBS, generally captured in bottom trawl surveys north of 59°N latitude. In the Alaskan Arctic it is likely the dominant prey species, and the Arctic FMP prohibits directed fishing for Arctic cod due to ecosystem concerns. As fish distributions and fishing locations shift, conservation measures for Arctic cod in the BSAI may become necessary. Further information is available at http://www.npfmc.org/arctic-fishery-management/.
+
+
+  \newpage
+  
+```{r child = 'forage_report_BSAI.Rmd'}
+```
+
+  \newpage
+
+```{r child = 'forage_report_GOA.Rmd'}
+```
+
+  \newpage
+
+# F. Environmental linkages 
+The physical environment of Alaskan waters is variable and experiencing rapid change. Identifying environmental niches occupied by species could be useful to understanding potential climate change impacts on forage species in Alaska. As an initial step towards this goal, presence/absence data for select species in the GOA and BSAI were fit using Generalized Additive Models (GAMs) with a binomial error structure and a logit link. Bottom temperature, sea surface temperature (SST), and depth were used to predict the probability of occurrence in each data set. The deviance explained by these GAMs was 32% and 40% for the BSAI and GOA, respectively. Hierarchical clustering was applied to the resulting ogives of estimated probability of occurrence for SST and depth in the GOA and BSAI, respectively. This allowed for grouping of species based the shape of the probability of occurrence curves and the identification of different environmental niches.
+
+Species and species groups were clustered into 4 niches based on depth on the BSAI shelf (\autoref{gam_presence_bsai}; NBS data are not included in this model). The clusters roughly correspond to species that have a peak in occurrence in the middle domain (Arctic cod, eelblenny, eulachon, prickleback, shrimp), species that are found primarily in deep water (magistrate armhook squid, myctophids, squid unid.), species found primarily in water shallower than 150 m (Pacific capelin, Pacific herring), and species that are found in either deep or shallow water, but not in between (Pacific sandifsh, rainbow smelt, sand lance unid., smelt unid.). 
+
+Species and species groups were clustered into 4 niches based on SST in the BSAI (\autoref{gam_presence_goa}). The clusters roughly correspond to warmer water species (chinook salmon, eulachon, pacific herring, shrimp unid., and squid unid.), species that have a thermal niche in the middle of the observed SST (chum salmon, Pacific capelin, and sidestrip shrimp), colder water species (magistrate armhook squid, sand lance unid., and sockeye salmon), and species observed in cold and warm water, but not in intermediate temperatures (Pacific sandfish and smelt unid.). 
+
+A potential next step in this analysis is to feed projections of SST and bottom temperature into the GAMs developed for each region to produce maps of potential distributions of occurrence of forage species under climate change.
+
+
+
+# G. Future research directions
+Given the change in authorship for the forage report, the goal for this year's report was primarily to replicate the previous report with updated data with some small additions. The future of the report is still However, future efforts will be aimed at developing synthetic (i.e. incorporating multiple data sources) indices of forage base and linking spatio-temporal changes in these indices to environmental variables. 
+
+Given the change in authorship for the forage report, the goal for this year's report was only to replicate the previous report with updated data with some small additions. However, future efforts will be aimed at developing synthetic (i.e. incorporating multiple data sources) indices of forage base and linking spatio-temporal changes in these indices to environmental variables. I also hope to explore the potential for more quantitative, model-based assessments of forage species that include indices of the biomass of their predators as seen through diet data. 
+
+\newpage
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{gam_presence_bsai}Probability of occurrence for selected forage species/groups in the BSAI based on GAMs incorporating depth, SST, and bottom temperature."}
+
+include_graphics("plots/presence_EBS_gam.png")
+
+```
+
+\newpage
+
+```{r,echo=FALSE,warning=FALSE,message=F,out.width="95%",fig.cap="\\label{gam_presence_goa}Probability of occurrence for selected forage species/groups in the GOA based on GAMs incorporating depth, SST, and bottom temperature."}
+
+include_graphics("plots/presence_GOA_gam.png")
+
+```
+
+\newpage
+
+# References
+
+Barton LH and VG Wespestad (1980) Distribution, biology, and stock assessment of western Alaska’s herring stocks. In Proceedings of the Alaska Herring Symposium. Alaska Sea Grant College Program Report 80-4. Alaska Sea Grant, Fairbanks, AK. pp 27-53
+
+Buck GB (2012) Abundance, age, sex, and size statistics for Pacific herring in Togiak District of Bristol Bay, 2010. Alaska Department of Fish and Game, Fishery Data Series No. 12-19, Anchorage.
+
+Elison T, P Salomone, T Sands, M Jones, C Brazil, GB Buck, F West, T Krieg, T Lemons (2015) 2014 Bristol Bay area annual management report. Alaska Department of Fish and Game, Fishery Management Report No. 15-24, Anchorage.
+
+Gong J (2002) Clarifying the standard deviational ellipse. Geographical Analysis 34: 155-167
+
+Hollowed AB, SJ Barbeaux, ED Cokelet, E Farley, S Kotwicki, PH Ressler, C Spital, CD Wilson (2012) Effects of climate variations on pelagic ocean habitats and their role in structuring forage fish distributions in the Bering Sea. Deep-Sea Research II 65-70: 230-250
+
+Lefever DW (1926) Measuring geographic concentration by means of the standard deviational ellipse. American Journal of Sociology 32: 88-94
+
+Logerwell EA, PJ Stabeno, CD Wilson, AB Hollowed (2007) The effect of oceanographic variability and interspecific competition on juvenile pollock (Theragra chalcogramma) and capelin (Mallotus villosus) distributions on the Gulf of Alaska shelf. Deep Sea Research Part II 54: 2849-2868
+
+Mecklenburg CW, TA Mecklenburg, LK Thorsteinson (2002) Fishes of Alaska. American Fisheries Society, Bethesda, MD
+
+Ormseth OA (2013) Appendix2. Preliminary assessment of forage species in the Bering Sea and Aleutian Islands. In Plan Team for Groundfish Fisheries of the Bering Sea and Aleutian Islands (compiler), Stock assessment and fishery evaluation report for the groundfish resources of the Bering Sea and Aleutian Islands. p. 1029-1063. North Pacific Fishery Management Council, 605 W. 4th Avenue Suite 306, Anchorage, AK 99501.
+
+Ormseth OA (2014) Appendix 2. Forage species report for the Gulf of Alaska. In Plan Team for Groundfish Fisheries of the Gulf of Alaska (compiler), Stock assessment and fishery evaluation report for the groundfish resources of the Gulf of Alaska, p. 1001-1039. North Pacific Fishery Management Council, 605 W. 4th Avenue Suite 306, Anchorage, AK 99501.
+
+Ressler PH, A De Robertis, JD Warren, JN Smith, S Kotwicki (2012) Developing an acoustic survey of euphausiids to understand trophic interactions in the Bering Sea ecosystem. Deep-Sea Research II 65-70: 184-195
+
+Ressler PH (2018) Eastern Bering Sea euphausiids (‘Krill’). Ecosystem Considerations 2018: Status of the eastern Bering Sea marine ecosystem, pp. 98-102. (https://access.afsc.noaa.gov/reem/ecoweb/index)
+
+
+Spear, A., Andrews III, A.G., Duffy‐Anderson, J., Jarvis, T., Kimmel, D. and McKelvey, D., (2023). Changes in the vertical distribution of age‐0 walleye pollock (Gadus chalcogrammus) during warm and cold years in the southeastern Bering Sea. Fisheries Oceanography, 32(2), pp.177-195.
+
+Thorson, J.T., A.O. Shelton, E.J. Ward, and H.J. Skaug. 2015. Geostatistical delta-generalized linear mixed models improve precision for estimated abundance indices for West Coast groundfishes. ICES Journal of Marine Science 72(5):1297-1310. doi:10.1093/icesjms/fsu243
+
+Tojo N, GH Kruse, FC Funk (2007) Migration dynamics of Pacific herring (Clupea pallasii) and response to spring environmental variability in the southeastern Bering Sea. Deep Sea Research Part II 54: 2832-2848
+
+Yasumiishi E, K Cieciel, A Andrews, E Siddon (2017) Spatial and temporal trends in the abundance and distribution of forage fish in pelagic waters of the eastern Bering Sea during late summer, 2002-2016. Ecosystem Considerations 2017: Status of the eastern Bering Sea marine ecosystem, pp. 111-116. (https://access.afsc.noaa.gov/reem/ecoweb/index)
+
+Yasumiishi, E. M., Cieciel, K., Andrews, A. G., Murphy, J., & Dimond, J. A. (2020). Climate-related changes in the biomass and distribution of small pelagic fishes in the eastern Bering Sea during late summer, 2002–2018. Deep Sea Research Part II: Topical Studies in Oceanography, 181, 104907.
+
+\newpage
