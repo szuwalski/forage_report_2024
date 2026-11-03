@@ -233,3 +233,49 @@ pandalus_cpue <-  tbl(con, in_schema("GAP_PRODUCTS", "AKFIN_CPUE_V")) %>%
 write.csv(pandalus_bio, "data/pandalus_biomass.csv",  row.names=FALSE)
 write.csv(pandalus_cpue, "data/pandalus_cpue.csv",  row.names=FALSE)
 
+# biomass and cpue for all shrimp and squid
+txn<-tbl(con, in_schema("GAP_PRODUCTS", "AKFIN_TAXONOMIC_GROUPS")) %>%
+  rename_with(tolower) %>%
+  collect()
+
+# side stripe shrimp
+txn %>% filter(species_code == 66120)
+
+sscpue<-tbl(con, in_schema("GAP_PRODUCTS", "AKFIN_CPUE_V")) %>%
+  rename_with(tolower) %>%
+  filter(species_code == 66120) %>%
+  collect()
+# all squid
+dcf<- txn %>% filter(superorder_taxon=="Decapodiformes")
+squid_codes<-unique(c(dcf$group_code, dcf$species_code))
+
+all_squid_cpue <-  tbl(con, in_schema("GAP_PRODUCTS", "AKFIN_CPUE_V")) %>%
+  rename_with(tolower) %>%
+  filter(species_code %in% squid_codes & survey_definition_id==47) %>%
+  collect()
+write.csv(all_squid_cpue, "data/GOA/all_squid_cpue_goa.csv",  row.names=FALSE)
+
+# biomass
+all_squid_biomass <-  tbl(con, in_schema("GAP_PRODUCTS", "AKFIN_BIOMASS_V")) %>%
+  rename_with(tolower) %>%
+  filter(species_code %in% squid_codes & survey_definition_id == 47  & area_type %in% c("NMFS STATISTICAL AREA","INPFC")) %>%
+  collect()
+write.csv(all_squid_biomass, "data/GOA/all_squid_biomass_goa.csv",  row.names=FALSE)
+
+# all shrimp...
+# 66200 has all Pandalid shrimp (no biomass estimates for 66019)
+shrimp<-txn %>% filter(grepl("shrimp",common_name))
+# Caridea seems like the best taxa to use
+ca<- txn %>% filter(infraorder_taxon=="Caridea")
+shrimp_codes<-unique(c(ca$group_code, ca$species_code))
+
+all_shrimp_biomass<-  tbl(con, in_schema("GAP_PRODUCTS", "AKFIN_BIOMASS_V")) %>%
+  rename_with(tolower) %>%
+  filter(species_code %in% shrimp_codes & survey_definition_id == 47  & area_type %in% c("NMFS STATISTICAL AREA","INPFC")) %>%
+  collect()
+
+write.csv(all_shrimp_biomass, "data/GOA/all_shrimp_biomass_goa.csv",  row.names=FALSE)
+
+# write taxon csvs for reference
+write.csv(dcf, "data/GOA/Decapodiformes.csv",  row.names=FALSE )
+write.csv(ca, "data/GOA/Caridea.csv",  row.names=FALSE )
